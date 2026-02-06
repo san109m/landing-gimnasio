@@ -2,23 +2,30 @@
 margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: "Segoe UI", system-ui, sans-serif;
+font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 
 body {
-background-color: #111;
+background-color: #161616;
 color: white;
 }
 
 
 /* ================= NAVBAR ================= */
 header {
+  position: sticky;
+  top: 0;
+  z-index: 2000;
+
   background-color: black;
-  box-shadow: 10px 10px 10px black;
-  position: relative;
-  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
+
 
 
 nav {
@@ -93,7 +100,7 @@ color: orange;
 
 
 /* ================= HERO ================= */
-#Hero {
+#Inicio {
   position: relative;
   height: 90vh;
   object-fit: cover;
@@ -184,6 +191,93 @@ color: orange;
 }
 
 
+#Servicios h1 {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+#Servicios span {
+  color: orange;
+}
+
+
+#p-servicio{
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+  padding-top: 10px;
+  color: oklch(0.705 0.015 286.067);
+}
+
+.servicios-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+
+.servicio {
+  padding: 20px;
+  background-color: #242424;
+  border-radius: 20px;
+  height: 250px;
+  border: 2px solid #414141;
+
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  will-change: transform;
+  transition: box-shadow 0.25s ease, background 0.25s ease;
+}
+
+.servicio:hover{
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+  background-color: #2a2a2a;
+}
+
+
+
+.servicio img{
+  width: 49px;
+  height: 49px;  
+  padding: 4px;         /* 🔥 hace el fondo más grande */
+  background: linear-gradient(135deg, #ffb347, orange);
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(255, 140, 0, 0.6);
+}
+
+
+.servicio h2{
+  font-size: 1.2rem;
+}
+
+.servicio p{
+  font-size: 1.1rem;
+   color: oklch(0.705 0.015 286.067);
+}
+
+
+@media (max-width: 1024px) {
+  .servicios-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .servicios-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
@@ -258,6 +352,15 @@ color: orange;
 .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
 .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
 .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+
+
+#Servicios h1 {
+    font-size: 2.2rem;
+    padding-top: 50px;   /* menos aire */
+  }
+
+
+
 
 }
 
