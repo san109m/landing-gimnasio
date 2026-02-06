@@ -52,13 +52,34 @@ gap: 2rem;
 text-decoration: none;
 color: white;
 font-weight: 500;
+transition: color 0.7s linear;
+display: inline-block;
+position: relative;
 }
+
+.nav-links a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: orange;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform 0.7s ease-out;
+}
+
 
 
 .nav-links a:hover {
 color: orange;
 }
 
+.nav-links a:hover:after{
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
 
 .menu-btn {
   display: none;
@@ -136,15 +157,30 @@ color: orange;
 
 .hero-content button {
   margin-top: 2rem;
-  padding: 0.9rem 1.6rem;
+  padding: 0.9rem 1.8rem;
   font-size: 1rem;
   border: none;
-  border-radius: 6px;
-  background-color: orange;
+  border-radius: 10px;
+
+  background: linear-gradient(135deg, orange, #ffb347);
   color: black;
   font-weight: bold;
   cursor: pointer;
-  width: fit-content;
+  will-change: transform;
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-content button:hover {
+  transform: scale(1.12);
+  box-shadow: 0 15px 35px rgba(255, 140, 0, 0.6);
+  background: linear-gradient(135deg, #ffb347, orange);
+}
+
+.hero-content button:active {
+  transform: scale(1.03);
 }
 
 
@@ -200,7 +236,7 @@ color: orange;
   }
 
   .hero-content h1 {
-    font-size: 2.6rem;
+    font-size: 2.7rem;
   }
 
   .hero-content p {
