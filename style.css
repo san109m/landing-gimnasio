@@ -350,6 +350,28 @@ color: orange;
 
 
 
+#Horarios h1 {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+#Horarios span {
+  color: orange;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .delay-1 { transition-delay: 0.1s; }
