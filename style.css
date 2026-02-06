@@ -202,7 +202,6 @@ color: orange;
 
 
 #Servicios{
-  padding-bottom: 5vh;
   mask-image: linear-gradient(
     to bottom,
     black 90%,
@@ -347,6 +346,30 @@ color: orange;
   transform: scaleX(1.4);
 }
 
+
+
+
+
+
+
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  will-change: transform, opacity;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
 
 
 @media (max-width: 1024px) {

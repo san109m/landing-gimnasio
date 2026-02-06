@@ -40,3 +40,22 @@ setInterval(() => {
   dots[index].classList.add("active");
 
 }, 3000);
+
+
+const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+        observer.unobserve(entry.target); // 🔥 se anima una sola vez
+      }
+    });
+  },
+  {
+    threshold: 0.15 // porcentaje visible para activarse
+  }
+);
+
+reveals.forEach(el => observer.observe(el));
