@@ -191,6 +191,28 @@ color: orange;
 }
 
 
+
+
+
+/* SECTION SERVICIOS */
+
+
+
+
+
+
+#Servicios{
+  padding-bottom: 5vh;
+  mask-image: linear-gradient(
+    to bottom,
+    black 90%,
+    rgba(0,0,0,0.7) 95%,
+    transparent 100%
+  );
+
+  
+}
+
 #Servicios h1 {
   padding-top: 80px;
   text-align: center;
@@ -230,12 +252,16 @@ color: orange;
   height: 250px;
   border: 2px solid #414141;
 
-
   display: flex;
   flex-direction: column;
   gap: 12px;
   will-change: transform;
   transition: box-shadow 0.25s ease, background 0.25s ease;
+
+}
+
+.servicios-container{
+  mask-image: linear-gradient(black 90%, transparent)
 }
 
 .servicio:hover{
@@ -265,6 +291,64 @@ color: orange;
 }
 
 
+
+
+/* ===== CARRUSEL GALERIA ===== */
+.carousel {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 5px solid #242424;
+  box-shadow: 10px 10px 10px 1px rgba(0,0,0,.25);
+}
+
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease-in-out;
+}   
+
+.carousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0,0,0,0.4);
+  padding: 6px 12px;
+  border-radius: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+
+.dot {
+  width: 24px;
+  height: 4px;
+  background: rgba(255,255,255,0.3);
+  border-radius: 10px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.dot.active {
+  background: orange;
+  transform: scaleX(1.4);
+}
+
+
+
 @media (max-width: 1024px) {
   .servicios-container {
     grid-template-columns: repeat(2, 1fr);
@@ -281,12 +365,16 @@ color: orange;
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-
+  
+  .imagengal {
+    min-width: 80vw;
+    height: 350px;
+  }
   .menu-btn {
     display: block;
     z-index: 1100;
   }
-
+  
   .menu-btn.active {
   transform: rotate(90deg);
  }
@@ -360,7 +448,17 @@ color: orange;
   }
 
 
-
+  .carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  aspect-ratio: 16 / 9;
+  margin: 40px auto;
+  overflow: hidden;
+  border-radius: 24px;
+  border: 5px solid #242424;
+  box-shadow: 10px 10px 10px 1px rgba(0,0,0,.25);
+}
 
 }
 
