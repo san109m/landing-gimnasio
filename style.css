@@ -5,6 +5,11 @@ box-sizing: border-box;
 font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
+section {
+  scroll-margin-top: 87px; /* ajustá según la altura real del navbar */
+}
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -384,14 +389,32 @@ color: orange;
 
 /* ===== CARD HORARIO ===== */
 .horario {
+  position: relative;
   width: 100%;
-  max-width: 360px;   /* 🔥 controla el tamaño */
+  max-width: 360px;
   background-color: #1f1f1f;
   padding: 24px;
   border-radius: 24px;
   border: 2px solid #242424;
   box-shadow: 0 10px 25px rgba(0,0,0,.35);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background-color 0.25s ease;
 }
+
+.horario:hover {
+  transform: translateY(-8px);
+  background-color: #232323;
+  border-color: rgba(255,165,0,0.35);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.65),
+    0 6px 18px rgba(0,0,0,.4);
+}
+
+
 
 /* ===== TITULO CARD ===== */
 .titulo {
@@ -440,15 +463,163 @@ color: orange;
 
 
 
+#Testimonios h1 {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+#Testimonios span {
+  color: orange;
+}
+
+.cardcliente {
+  width: 100%;
+  max-width: 420px;
+  background-color: #1f1f1f;
+  border-radius: 24px;
+  border: 2px solid #242424;
+  overflow: hidden;
+}
+
+.card-inner {
+  padding: 24px;
+  transition:
+    transform 0.35s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+  will-change: transform;
+}
+
+/* hover real */
+/* CONTENEDOR EXTERNO (reveal) */
+.cardcliente {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 24px;
+  border: 2px solid #242424;
+  overflow: hidden; /* 🔥 clave */
+}
+
+/* CONTENIDO INTERNO (hover) */
+.card-inner {
+  background-color: #1f1f1f;
+  padding: 24px;
+  transition:
+    transform 0.35s cubic-bezier(.4,0,.2,1),
+    box-shadow 0.35s ease,
+    background-color 0.35s ease;
+  will-change: transform;
+}
+
+/* HOVER REAL */
+.cardcliente:hover .card-inner {
+  transform: translateY(-8px);
+  background-color: #232323;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.6),
+    0 6px 16px rgba(0,0,0,.4);
+}
 
 
 
 
+.imagenes-estrellas img{
+  width: 15px;
+  height: 15px;
+  
+}
+
+.cardcliente:hover {
+  transform: translateY(-8px);
+  background-color: #232323;
+  border-color: rgba(255,165,0,0.35);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.65),
+    0 6px 18px rgba(0,0,0,.4);
+}
+
+.imagenes-estrellas{
+  padding-bottom: 15px;
+}
 
 
+.usuario img{
+  width: 45px;
+  height: 45px;
+  padding: 10px;         /* 🔥 hace el fondo más grande */
+  background: linear-gradient(135deg, #ffb347, orange);
+  border-radius: 18px;
+}
+
+.testimonio{
+  max-width: 55ch;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  color: oklch(0.705 0.015 286.067);
+  padding-bottom: 30px;
+}
+
+.cardcliente{
+  width: 100%;
+  max-width: 420px;
+  background-color: #1f1f1f;
+  padding: 24px;
+  border-radius: 24px;
+  border: 2px solid #242424;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
 
 
+.usuario {
+  display: flex;
+  align-items: center;     /* 🔑 centra verticalmente */
+  gap: 16px;               /* espacio entre imagen y texto */
+}
 
+.usuario-informacion{
+  display: flex;
+  flex-direction: column;
+}
+
+.clientes-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  justify-items: center;
+}
+
+
+#Testimonios{
+  background-color: #0a0a0a;
+}
+
+
+#Contacto h1 {
+  padding-top: 80px;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 1.1;
+}
+
+#Contacto span {
+  color: orange;
+}
+
+
+#Contacto p{
+  max-width: 55ch;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
+  color: oklch(0.705 0.015 286.067);
+  text-wrap: balance;
+}
 
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
@@ -463,14 +634,12 @@ color: orange;
 .delay-11 { transition-delay: 0.11s; }
 .delay-12 { transition-delay: 0.12s; }
 
-
 .reveal {
   opacity: 0;
   transform: translateY(40px);
   transition:
     opacity 0.7s ease,
     transform 0.7s ease;
-  will-change: transform, opacity;
 }
 
 .reveal.active {
