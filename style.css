@@ -621,6 +621,213 @@ color: orange;
   text-wrap: balance;
 }
 
+/* ===== CONTACTO ===== */
+
+#Contacto {
+  background-color: #0a0a0a;
+  padding-bottom: 12vh;
+}
+
+.contacto-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  justify-items: center;
+}
+
+/* CARD */
+.contacto-card {
+  width: 100%;
+  max-width: 340px;
+  background-color: #1f1f1f;
+  padding: 28px;
+  border-radius: 24px;
+  border: 2px solid #242424;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+
+  display: flex;
+  align-items: center;
+  gap: 18px;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+/* hover elegante */
+.contacto-card:hover {
+  transform: translateY(-6px);
+  background-color: #232323;
+  border-color: rgba(255,165,0,0.25);
+  box-shadow:
+    0 20px 40px rgba(0,0,0,.6),
+    0 4px 12px rgba(0,0,0,.4);
+}
+
+/* ICONO */
+.contacto-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #fc9a12, rgb(173, 113, 0));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contacto-icon img {
+  width: 32px;
+  height: 32px;
+  filter: brightness(0) invert(1);
+}
+
+/* TEXTO */
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto-info h2 {
+  font-size: 1.1rem;
+  line-height: 1.2;
+}
+
+.contacto-info p {
+  font-size: 0.95rem;
+  color: oklch(0.705 0.015 286.067);
+}
+
+/* ===== FOOTER ===== */
+
+#Footer {
+  background-color: #0a0a0a;
+  color: white;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 20px 50px;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 48px;
+}
+
+/* BRAND */
+.footer-brand img {
+  width: 48px;
+  height: 48px;
+}
+
+.footer-brand h2 {
+  margin-top: 12px;
+  font-size: 1.4rem;
+}
+
+.footer-brand p {
+  margin-top: 12px;
+  max-width: 45ch;
+  line-height: 1.6;
+  color: oklch(0.705 0.015 286.067);
+}
+
+/* LINKS */
+.footer-links h3,
+.footer-contacto h3 {
+  font-size: 1.1rem;
+  margin-bottom: 14px;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-links a {
+  color: oklch(0.705 0.015 286.067);
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: orange;
+  transform: translateX(4px);
+}
+
+/* CONTACTO */
+.footer-contacto p {
+  margin-bottom: 8px;
+  color: oklch(0.705 0.015 286.067);
+}
+
+/* BOTTOM */
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 0.9rem;
+  color: oklch(0.705 0.015 286.067);
+}
+/* ===== BOTON VOLVER ARRIBA ===== */
+#backToTop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: none;
+  background-color: orange;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+  z-index: 3000;
+  box-shadow: 0 10px 25px rgba(0,0,0,.5);
+}
+
+#backToTop.show {
+  display: block;
+}
+.nav-links.active ~ #backToTop {
+  display: none;
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .footer-container {
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin-inline: auto;
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 480px) {
+  .contacto-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
@@ -758,6 +965,7 @@ color: orange;
 .nav-links.active li:nth-child(2) { transition-delay: 0.2s; }
 .nav-links.active li:nth-child(3) { transition-delay: 0.3s; }
 .nav-links.active li:nth-child(4) { transition-delay: 0.4s; }
+.nav-links.active li:nth-child(5) { transition-delay: 0.5s; }
 
 
 #Servicios h1 {

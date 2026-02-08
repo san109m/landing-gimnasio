@@ -20,6 +20,17 @@ document.addEventListener("click", (e) => {
   }
 });
 
+const navItems = document.querySelectorAll(".nav-links a");
+
+navItems.forEach(link => {
+  link.addEventListener("click", () => {
+    navLinks.classList.remove("active");
+    menuBtn.classList.remove("active");
+    menuBtn.textContent = "☰";
+  });
+});
+
+
 const track = document.querySelector(".carousel-track");
 const slides = document.querySelectorAll(".carousel img");
 const dots = document.querySelectorAll(".dot");
@@ -59,3 +70,18 @@ const observer = new IntersectionObserver(
 );
 
 reveals.forEach(el => observer.observe(el));
+
+
+const backToTop = document.getElementById("backToTop");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 500) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+});
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
