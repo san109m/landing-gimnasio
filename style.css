@@ -110,7 +110,6 @@ color: orange;
   background-position: center;
   background-repeat: no-repeat;
 
-  mask-image: linear-gradient(black 90%, transparent)
 }
 
 
@@ -202,14 +201,13 @@ color: orange;
 
 
 #Servicios{
-  mask-image: linear-gradient(
-    to bottom,
-    black 90%,
-    rgba(0,0,0,0.7) 95%,
-    transparent 100%
-  );
-
-  
+  background-color: #0a0a0a;
+  padding-top: 10vh;
+  padding-bottom: 17vh;
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0)),
+    linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0)),
+    linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
 }
 
 #Servicios h1 {
@@ -225,32 +223,35 @@ color: orange;
 
 
 #p-servicio{
-  display: flex;
-  font-size: 20px;
-  align-items: center;
-  justify-content: center;
-  padding-top: 10px;
+  max-width: 55ch;
+  margin: 12px auto 0;
+  text-align: center;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  line-height: 1.6;
   color: oklch(0.705 0.015 286.067);
+  text-wrap: balance;
 }
+
 
 .servicios-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  
 
   max-width: 1400px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 80px 20px;
 }
 
 
 .servicio {
   padding: 20px;
-  background-color: #242424;
+  background-color: #1b1b1b;
   border-radius: 20px;
   height: 250px;
   border: 2px solid #414141;
-
+  height: 270px;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -293,6 +294,17 @@ color: orange;
 
 
 /* ===== CARRUSEL GALERIA ===== */
+
+
+#galeriaimagenes{
+  padding-top: 3vh;
+  padding-bottom: 10vh;
+    background:
+    linear-gradient(to right, rgba(0,0,0,0.85), rgba(0,0,0,0)),
+    linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0)),
+    linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0));
+}
+
 .carousel {
   position: relative;
   width: 90%;
@@ -348,8 +360,6 @@ color: orange;
 
 
 
-
-
 #Horarios h1 {
   padding-top: 80px;
   text-align: center;
@@ -361,6 +371,72 @@ color: orange;
   color: orange;
 }
 
+/* ===== CONTENEDOR GRID ===== */
+.horarios-container {
+  justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  padding: 5vh 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ===== CARD HORARIO ===== */
+.horario {
+  width: 100%;
+  max-width: 360px;   /* 🔥 controla el tamaño */
+  background-color: #1f1f1f;
+  padding: 24px;
+  border-radius: 24px;
+  border: 2px solid #242424;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+}
+
+/* ===== TITULO CARD ===== */
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 12px;
+}
+
+.titulo img {
+  width: 36px;
+  height: 36px;
+  filter: brightness(0) invert(1);
+}
+
+/* ===== FILA HORARIO ===== */
+.section-horario {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.title-horario {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-horario p {
+  font-size: 0.9rem;
+  color: oklch(0.705 0.015 286.067);
+}
+
+.h3-horario {
+  margin-left: auto;
+  color: orange;
+  font-weight: 600;
+}
+
+/* ===== DIVIDER ===== */
+.divider {
+  height: 1px;
+  background-color: rgba(255,255,255,0.1);
+  margin: 8px 0;
+}
 
 
 
@@ -377,6 +453,15 @@ color: orange;
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
+.delay-6 { transition-delay: 0.6s; }
+.delay-7 { transition-delay: 0.7s; }
+.delay-8 { transition-delay: 0.8s; }
+.delay-9 { transition-delay: 0.9s; }
+.delay-10 { transition-delay: 0.10s; }
+.delay-11 { transition-delay: 0.11s; }
+.delay-12 { transition-delay: 0.12s; }
 
 
 .reveal {
@@ -410,7 +495,26 @@ color: orange;
 
 /* ================= RESPONSIVE ================= */
 @media (max-width: 768px) {
-  
+  #Horarios h1 {
+    font-size: 2.2rem;
+    padding-top: 50px;
+  }
+
+  .horarios-container {
+    gap: 24px;
+  }
+
+  .horario {
+    padding: 20px;
+  }
+
+  .titulo h3 {
+    font-size: 1rem;
+  }
+
+  .h3-horario {
+    font-size: 0.95rem;
+  }
   .imagengal {
     min-width: 80vw;
     height: 350px;
@@ -505,5 +609,17 @@ color: orange;
   box-shadow: 10px 10px 10px 1px rgba(0,0,0,.25);
 }
 
+}
+
+@media (max-width: 480px) {
+  .section-horario {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .h3-horario {
+    margin-left: 0;
+    align-self: flex-end;
+  }
 }
 
