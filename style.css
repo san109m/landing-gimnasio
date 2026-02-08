@@ -6,7 +6,7 @@ font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe U
 }
 
 section {
-  scroll-margin-top: 87px; /* ajustá según la altura real del navbar */
+  scroll-margin-top: 87px; 
 }
 
 
@@ -142,11 +142,11 @@ color: orange;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;   /* centra el contenido */
+  align-items: center;  
 
-  margin: 0 auto;        /* 🔑 centra el bloque */
+  margin: 0 auto;        
   padding: 0 1.5rem;
-  text-align: center;    /* centra el texto */
+  text-align: center;   
 }
 
 
@@ -279,7 +279,7 @@ color: orange;
 .servicio img{
   width: 49px;
   height: 49px;  
-  padding: 4px;         /* 🔥 hace el fondo más grande */
+  padding: 4px;     
   background: linear-gradient(135deg, #ffb347, orange);
   border-radius: 18px;
   box-shadow: 0 12px 30px rgba(255, 140, 0, 0.6);
@@ -548,7 +548,7 @@ color: orange;
 .usuario img{
   width: 45px;
   height: 45px;
-  padding: 10px;         /* 🔥 hace el fondo más grande */
+  padding: 10px;    
   background: linear-gradient(135deg, #ffb347, orange);
   border-radius: 18px;
 }
@@ -574,8 +574,8 @@ color: orange;
 
 .usuario {
   display: flex;
-  align-items: center;     /* 🔑 centra verticalmente */
-  gap: 16px;               /* espacio entre imagen y texto */
+  align-items: center;     
+  gap: 16px;            
 }
 
 .usuario-informacion{
