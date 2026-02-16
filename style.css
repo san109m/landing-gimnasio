@@ -753,7 +753,9 @@ color: orange;
   background-color: #0a0a0a;
   color: white;
   border-top: 1px solid rgba(255,255,255,0.08);
+
 }
+
 
 .footer-container {
   max-width: 1400px;
@@ -809,17 +811,38 @@ color: orange;
 }
 
 /* CONTACTO */
-.footer-contacto p {
-  margin-bottom: 8px;
-  color: oklch(0.705 0.015 286.067);
+.footer-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
+
+.footer-contacto a {
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+}
+
+.footer-contacto a p {
+  transition:
+    transform 0.25s cubic-bezier(.34,1.56,.64,1),
+    color 0.25s ease;
+}
+
+.footer-contacto a:hover p {
+  transform: translateX(4px);
+  color: orange;
+}
+
 
 /* BOTTOM */
 .footer-bottom {
   border-top: 1px solid rgba(255,255,255,0.08);
   padding: 20px;
   text-align: center;
+  width: 100%;
 }
+
 
 .footer-bottom p {
   font-size: 0.9rem;
