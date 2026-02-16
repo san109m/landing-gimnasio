@@ -85,3 +85,11 @@ window.addEventListener("scroll", () => {
 backToTop.addEventListener("click", () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
 });
+
+const logo = document.getElementById("logonav");
+
+logo.addEventListener("click", () => {
+  logo.classList.remove("pop"); // reset
+  void logo.offsetWidth;        // magia para reiniciar animación
+  logo.classList.add("pop");
+});
